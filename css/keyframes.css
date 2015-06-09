@@ -1,0 +1,39 @@
+@-webkit-keyframes drawCard{
+	from{
+		transform:rotateY(180deg) scale(0.8);
+	}
+	to{
+		transform:rotateY(0deg) scale(1);
+	}
+}
+
+@keyframes drawCard{
+	from{
+		transform:rotateY(180deg) scale(0.8);
+	}
+	to{
+		transform:rotateY(0deg) scale(1);
+	}
+}
+
+@-webkit-keyframes throwCard{
+	from{
+		transform:scale(1);
+		opacity:1;
+	}
+	to{
+		transform:scale(1.2);
+		opacity:0;
+	}
+}
+
+@keyframes throwCard{
+	from{
+		transform:;
+		opacity:1;
+	}
+	to{
+		transform:rotate(10deg) translateX(100%);
+		opacity:0;
+	}
+}

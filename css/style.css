@@ -1,0 +1,195 @@
+@import url(webfont.css);
+@import url(keyframes.css);
+
+html, body{
+	margin:0px;padding:0px;
+	width:100%;
+	height:100%;
+}
+
+body{
+	background:hsl(270, 40%, 30%);
+	text-align:center;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-align:center;
+	cursor:pointer;
+}
+
+/*vertical align hack*/
+body:before{
+	content:'';
+	height:100%;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+#deck{
+	position:relative;
+	width:220px;
+	height:320px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.card_wrapper{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+}
+
+.card{
+	position:relative;
+	float:left;
+	width:100%;
+	height:100%;
+	border-radius:10px;
+	box-shadow:0px 3px 10px rgba(0,0,0,0.6);
+	font-weight:bold;
+
+	text-shadow:1px 1px 0px #FFF, -1px -1px 0px #FFF, 1px -1px 0px #FFF, -1px 1px 0px #FFF;
+
+	-webkit-transition:1s;
+	-moz-transition:1s;
+	-ms-transition:1s;
+	-o-transition:1s;
+	transition:1s;
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-mstransform-style: preserve-3d;
+	-otransform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.card_wrapper.drawn .card{
+	-webkit-animation:drawCard 1s 1;
+	animation:drawCard 1s 1;
+	-webkit-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+}
+
+.card_wrapper.thrown .card{
+	-webkit-animation:drawCard 1s 1;
+	animation:throwCard 0.2s 1;
+	-webkit-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+}
+
+.card_wrapper.dummy .card{
+	-webkit-transform:rotateY(180deg) scale(0.8);
+	-moz-transform:rotateY(180deg) scale(0.8);
+	-ms-transform:rotateY(180deg) scale(0.8);
+	-o-transform:rotateY(180deg) scale(0.8);
+	transform:rotateY(180deg) scale(0.8);
+}
+
+.card .front{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border-radius:10px;
+	z-index:2;
+
+	background:#F5F5F5;
+
+	-webkit-backface-visibility:hidden;
+	backface-visibility:hidden;
+
+	-webkit-transform:rotateY(0deg);
+	-moz-transform:rotateY(0deg);
+	-ms-transform:rotateY(0deg);
+	-o-transform:rotateY(0deg);
+	transform:rotateY(0deg);
+}
+
+.card .back{
+	content:'';
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border-radius:10px;
+	z-index:1;
+
+	background:#F5F5F5;
+
+	background-image:url(../img/card_freeman.svg);
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+
+	-webkit-backface-visibility:hidden;
+	backface-visibility:hidden;
+
+	-webkit-transform:rotateY(180deg);
+	-moz-transform:rotateY(180deg);
+	-ms-transform:rotateY(180deg);
+	-o-transform:rotateY(180deg);
+	transform:rotateY(180deg);
+
+}
+
+.card .writing{
+	position:absolute;
+	top:15px;left:15px;
+	text-align:left;
+	font-size:16px;
+	text-transform:uppercase;
+
+	line-height:32px;
+}
+.card .writing.flipped{
+	top:auto;left:auto;
+	bottom:15px;right:15px;
+
+	-webkit-transform:rotate(180deg);
+	-moz-transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+	transform:rotate(180deg);
+}
+
+.card .writing .number{
+	font-size:32px;
+	float:left;
+	margin-right:10px;
+}
+
+.card .writing:after{
+	position:absolute;
+	top:32px;left:0px;
+	font-size:32px;
+}
+
+.card_wrapper.hearts{
+	color:red;
+}
+.card_wrapper.hearts .card .writing:after{
+	content:'♥';
+}
+
+.card_wrapper.diamonds{
+	color:red;
+}
+.card_wrapper.diamonds .card .writing:after{
+	content:'♦';
+}
+
+.card_wrapper.clubs{
+	color:black;
+}
+.card_wrapper.clubs .card .writing:after{
+	content:'♣';
+}
+
+.card_wrapper.spades{
+	color:black;
+}
+.card_wrapper.spades .card .writing:after{
+	content:'♠';
+}
