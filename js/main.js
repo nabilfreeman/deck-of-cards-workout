@@ -34,7 +34,7 @@ for(var i = 1; i < 5; i++) {
 }
 
 //shuffle the deck!
-cards = shuffle(cards);
+shuffle(cards);
 
 var deck = document.querySelector("#deck");
 
@@ -85,16 +85,15 @@ var generateCard = function(suit, number){
 	deck.appendChild(card);
 }
 
-document.addEventListener("touchstart", function(e){
+var drawCard = function(e){
 	e.preventDefault();
-	
+
+	shuffle(cards);
 	var card = cards.pop();
 	generateCard(card.suit, card.number);
 
 	return false;
-});
+};
 
-document.addEventListener("click", function(e){
-	var card = cards.pop();
-	generateCard(card.suit, card.number);
-});
+document.addEventListener("touchstart", drawCard);
+document.addEventListener("click", drawCard);

@@ -1,6 +1,6 @@
 @-webkit-keyframes drawCard{
 	from{
-		transform:rotateY(180deg) scale(0.8);
+		transform:rotateY(-180deg) scale(0.8);
 	}
 	to{
 		transform:rotateY(0deg) scale(1);
@@ -9,7 +9,7 @@
 
 @keyframes drawCard{
 	from{
-		transform:rotateY(180deg) scale(0.8);
+		transform:rotateY(-180deg) scale(0.8);
 	}
 	to{
 		transform:rotateY(0deg) scale(1);
