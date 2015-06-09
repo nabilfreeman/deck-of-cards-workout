@@ -1,39 +1,39 @@
 @-webkit-keyframes drawCard{
 	from{
-		transform:rotateY(-180deg) scale(0.8);
+		-webkit-transform:rotateY(-180deg) translateZ(200px);
 	}
 	to{
-		transform:rotateY(0deg) scale(1);
+		-webkit-transform:rotateY(0deg) translateZ(0px);
 	}
 }
 
 @keyframes drawCard{
 	from{
-		transform:rotateY(-180deg) scale(0.8);
+		-webkit-transform:rotateY(-180deg) translateZ(200px);
 	}
 	to{
-		transform:rotateY(0deg) scale(1);
+		-webkit-transform:rotateY(0deg) translateZ(0px);
 	}
 }
 
 @-webkit-keyframes throwCard{
 	from{
-		transform:scale(1);
+		transform:translateZ(0px);
 		opacity:1;
 	}
 	to{
-		transform:scale(1.2);
+		transform:translateZ(-200px);
 		opacity:0;
 	}
 }
 
 @keyframes throwCard{
 	from{
-		transform:;
+		transform:translateZ(0px);
 		opacity:1;
 	}
 	to{
-		transform:rotate(10deg) translateX(100%);
+		transform:rotate(10deg) translateX(100%) translateZ(-200px);
 		opacity:0;
 	}
 }
