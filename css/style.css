@@ -8,8 +8,7 @@ html, body{
 }
 
 body{
-	background:hsl(270, 40%, 30%);
-	background:hsl(210, 70%, 30%);
+	background:hsl(210, 50%, 50%);
 	text-align:center;
 	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
 	text-align:center;
@@ -21,7 +20,7 @@ body{
 	-o-perspective:1000px;
 	perspective:1000px;
 
-	background-image:url('../img/bg.jpg');
+	background-image:url('../img/bg.png');
 	background-size:200px 200px;
 	background-position:center center;
 }
