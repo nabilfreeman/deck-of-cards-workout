@@ -21,7 +21,7 @@ body{
 	-o-perspective:1000px;
 	perspective:1000px;
 
-	background-image:url('../img/bg.png');
+	background-image:url('../img/bg.jpg');
 	background-size:200px 200px;
 
 	-webkit-animation:moveBG 3s linear infinite;
