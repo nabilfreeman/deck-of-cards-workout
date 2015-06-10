@@ -126,17 +126,18 @@ var generateCard = function(suit, number){
 var drawCard = function(e){
 	e.preventDefault();
 
-	if(cards.length % 4 === 0){
-		epicMessage(true);
-	}
-
 	if(cards.length === 0){
 		var drawn = document.querySelector(".card_wrapper.drawn");
 		if(drawn !== null){
 			drawn.classList.remove("drawn");
 			drawn.classList.add("thrown");
+			epicMessage(true);
 		}
 		return;
+	}
+
+	if(cards.length % 4 === 0){
+		epicMessage();
 	}
 
 	shuffle(cards);
