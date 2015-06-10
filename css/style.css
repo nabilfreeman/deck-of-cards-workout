@@ -23,9 +23,6 @@ body{
 
 	background-image:url('../img/bg.jpg');
 	background-size:200px 200px;
-
-	-webkit-animation:moveBG 3s linear infinite;
-	animation:moveBG 3s linear infinite;
 }
 
 /*vertical align hack*/
