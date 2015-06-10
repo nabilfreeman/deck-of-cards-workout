@@ -18,22 +18,26 @@
 
 @-webkit-keyframes throwCard{
 	from{
-		-webkit-transform:translateZ(-10px);
-		/*opacity:1;*/
+		/*-webkit-transform:translateZ(-10px);*/
+		-webkit-transform:translateZ(0px);
+		opacity:1;
 	}
 	to{
-		-webkit-transform:translateZ(-10px) rotate(10deg) translateX(200%);
-		/*opacity:0;*/
+		/*-webkit-transform:translateZ(-10px) rotate(10deg) translateX(200%);*/
+		-webkit-transform:translateZ(-100px);
+		opacity:0;
 	}
 }
 
 @keyframes throwCard{
 	from{
-		transform:translateZ(-10px);
-		/*opacity:1;*/
+		/*transform:translateZ(-10px);*/
+		transform:translateZ(0px);
+		opacity:1;
 	}
 	to{
-		transform:translateZ(-10px) rotate(10deg) translateX(200%);
-		/*opacity:0;*/
+		/*transform:translateZ(-10px) rotate(10deg) translateX(200%);*/
+		transform:translateZ(-100px);
+		opacity:0;
 	}
 }
