@@ -82,8 +82,8 @@ body:before{
 }
 
 .card_wrapper.thrown .card{
-	-webkit-animation:throwCard 4s 1;
-	animation:throwCard 0.4s 1;
+	-webkit-animation:throwCard 0.2s 1;
+	animation:throwCard 0.2s 1;
 	-webkit-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
 }

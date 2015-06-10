@@ -37,7 +37,7 @@
 	}
 	to{
 		/*transform:translateZ(-10px) rotate(10deg) translateX(200%);*/
-		transform:translateZ(-100px);
+		transform:translateZ(100px);
 		opacity:0;
 	}
 }
