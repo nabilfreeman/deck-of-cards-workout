@@ -33,6 +33,12 @@ body{
 	background-size:200px 200px;
 	background-position:center center;
 
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	-o-user-select:none;
+	user-select:none;
+
 	/*-webkit-animation: moveBG 20s linear infinite;
 	animation: moveBG 20s linear infinite;*/
 }
@@ -239,6 +245,10 @@ body:before{
 	display:none;
 
 	-webkit-transform:translateZ(150px);
+	-moz-transform:translateZ(150px);
+	-ms-transform:translateZ(150px);
+	-o-transform:translateZ(150px);
+	transform:translateZ(150px);
 }
 
 #message:before{
@@ -270,8 +280,9 @@ body:before{
 #intro{
 	position:fixed;
 	top:0px;
-	left:0px;
-	width:100%;
+	left: 50%;
+	margin-left: -140px;
+	width: 280px;
 	height:100%;
 
 	text-align:left;
@@ -290,8 +301,7 @@ body:before{
 #intro div{
 	display:inline-block;
 	vertical-align:middle;
-	width:280px;
-	padding-left:20px;
+	width:270px;
 }
 
 #intro div h1{
