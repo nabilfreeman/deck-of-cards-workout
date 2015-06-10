@@ -23,6 +23,7 @@ body{
 
 	background-image:url('../img/bg.jpg');
 	background-size:200px 200px;
+	background-position:center center;
 }
 
 /*vertical align hack*/
@@ -202,7 +203,7 @@ body:before{
 	color:red;
 }
 .card_wrapper.hearts .card .front .animation{
-	background-image:url('../img/compressed/pushup.gif');
+	background-image:url(../img/compressed/pushup.gif);
 }
 .card_wrapper.hearts .card .writing:after{
 	content:'♥';
@@ -212,7 +213,7 @@ body:before{
 	color:red;
 }
 .card_wrapper.diamonds .card .front .animation{
-	background-image:url('../img/compressed/crunch.gif');
+	background-image:url(../img/compressed/crunch.gif);
 }
 .card_wrapper.diamonds .card .writing:after{
 	content:'♦';
@@ -222,7 +223,7 @@ body:before{
 	color:black;
 }
 .card_wrapper.clubs .card .front .animation{
-	background-image:url('../img/compressed/squat.gif');
+	background-image:url(../img/compressed/squat.gif);
 }
 .card_wrapper.clubs .card .writing:after{
 	content:'♣';
@@ -232,8 +233,52 @@ body:before{
 	color:black;
 }
 .card_wrapper.spades .card .front .animation{
-	background-image:url('../img/compressed/pullup.gif');
+	background-image:url(../img/compressed/pullup.gif);
 }
 .card_wrapper.spades .card .writing:after{
 	content:'♠';
+}
+
+.message{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+
+	background-image:url(../img/explosion.gif);
+	background-position:center center;
+	background-size:100% auto;
+	background-repeat:no-repeat;
+}
+
+.message:before{
+	content:'';
+	height:100%;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.message div{
+	display:inline-block;
+	vertical-align:middle;
+	font-weight:bold;
+	font-size:80px;
+	color:#FFF;
+	-webkit-text-stroke:2px #000;
+	text-shadow:15px 15px 40px #000, -15px -15px 40px #000, 15px -15px 40px #000, -15px 15px 40px #000;
+}
+
+footer{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	height:60px;
+
+	color:#FFF;
+	text-shadow:1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000;
+	font-weight:bold;
+	font-size:18px;
+	line-height:60px;
 }
