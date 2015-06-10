@@ -37,3 +37,21 @@
 		opacity:0;
 	}
 }
+
+@-webkit-keyframes moveBG{
+	from{
+		background-position:0px 0px;	
+	}
+	to{
+		background-position:200px 0px;
+	}
+}
+
+@keyframes moveBG{
+	from{
+		background-position:0px 0px;	
+	}
+	to{
+		background-position:200px 0px;
+	}
+}

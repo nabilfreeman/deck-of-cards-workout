@@ -9,6 +9,7 @@ html, body{
 
 body{
 	background:hsl(270, 40%, 30%);
+	background:hsl(210, 70%, 30%);
 	text-align:center;
 	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
 	text-align:center;
@@ -19,6 +20,12 @@ body{
 	-ms-perspective:1000px;
 	-o-perspective:1000px;
 	perspective:1000px;
+
+	background-image:url('../img/bg.png');
+	background-size:200px 200px;
+
+	-webkit-animation:moveBG 3s linear infinite;
+	animation:moveBG 3s linear infinite;
 }
 
 /*vertical align hack*/
@@ -78,8 +85,8 @@ body:before{
 }
 
 .card_wrapper.thrown .card{
-	-webkit-animation:throwCard 1s 1;
-	animation:throwCard 0.2s 1;
+	-webkit-animation:throwCard 4s 1;
+	animation:throwCard 0.4s 1;
 	-webkit-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
 }
@@ -124,7 +131,8 @@ body:before{
 	width:160px;
 	height:160px;
 
-	transform:translateX(-50%) translateY(-50%);
+	margin-top:-80px;
+	margin-left:-80px;
 
 	border-radius:50%;
 
