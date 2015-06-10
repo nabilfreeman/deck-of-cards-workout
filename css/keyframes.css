@@ -18,11 +18,11 @@
 
 @-webkit-keyframes throwCard{
 	from{
-		transform:translateZ(0px);
+		-webkit-transform:translateZ(0px);
 		opacity:1;
 	}
 	to{
-		transform:translateZ(-200px);
+		-webkit-transform:rotate(10deg) translateX(100%) translateZ(-200px);
 		opacity:0;
 	}
 }
