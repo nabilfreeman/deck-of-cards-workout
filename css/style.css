@@ -197,7 +197,7 @@ body:before{
 	color:red;
 }
 .card_wrapper.hearts .card .front .animation{
-	background-image:url('../img/pushup.gif');
+	background-image:url('../img/compressed/pushup.gif');
 }
 .card_wrapper.hearts .card .writing:after{
 	content:'♥';
@@ -207,7 +207,7 @@ body:before{
 	color:red;
 }
 .card_wrapper.diamonds .card .front .animation{
-	background-image:url('../img/crunch.gif');
+	background-image:url('../img/compressed/crunch.gif');
 }
 .card_wrapper.diamonds .card .writing:after{
 	content:'♦';
@@ -217,7 +217,7 @@ body:before{
 	color:black;
 }
 .card_wrapper.clubs .card .front .animation{
-	background-image:url('../img/squat.gif');
+	background-image:url('../img/compressed/squat.gif');
 }
 .card_wrapper.clubs .card .writing:after{
 	content:'♣';
@@ -227,7 +227,7 @@ body:before{
 	color:black;
 }
 .card_wrapper.spades .card .front .animation{
-	background-image:url('../img/pullup.gif');
+	background-image:url('../img/compressed/pullup.gif');
 }
 .card_wrapper.spades .card .writing:after{
 	content:'♠';
