@@ -126,6 +126,16 @@ var generateCard = function(suit, number){
 var drawCard = function(e){
 	e.preventDefault();
 
+	var intro = document.querySelector("#intro");
+
+	if(intro !== null){
+		document.body.classList.remove("intro");
+		document.body.removeChild(intro);
+		footer.innerHTML = "DRAW A CARD!";
+
+		return;
+	}
+
 	if(cards.length === 0){
 		var drawn = document.querySelector(".card_wrapper.drawn");
 		if(drawn !== null){

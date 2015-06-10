@@ -18,12 +18,10 @@
 
 @-webkit-keyframes throwCard{
 	from{
-		/*-webkit-transform:translateZ(-10px);*/
 		-webkit-transform:translateZ(0px);
 		opacity:1;
 	}
 	to{
-		/*-webkit-transform:translateZ(-10px) rotate(10deg) translateX(200%);*/
 		-webkit-transform:translateZ(-100px);
 		opacity:0;
 	}
@@ -31,13 +29,29 @@
 
 @keyframes throwCard{
 	from{
-		/*transform:translateZ(-10px);*/
 		transform:translateZ(0px);
 		opacity:1;
 	}
 	to{
-		/*transform:translateZ(-10px) rotate(10deg) translateX(200%);*/
 		transform:translateZ(100px);
 		opacity:0;
+	}
+}
+
+@-webkit-keyframes moveBG{
+	from{
+		background-position:0px 0px;	
+	}
+	to{
+		background-position:200px 0px;
+	}
+}
+
+@keyframes moveBG{
+	from{
+		background-position:0px 0px;	
+	}
+	to{
+		background-position:200px 0px;
 	}
 }
