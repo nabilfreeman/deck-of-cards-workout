@@ -29,11 +29,11 @@
 
 @keyframes throwCard{
 	from{
-		transform:translateZ(0px);
+		transform:translateZ(-10px);
 		opacity:1;
 	}
 	to{
-		transform:rotate(10deg) translateX(200%);
+		transform:translateZ(-10px) rotate(10deg) translateX(200%);
 		opacity:0;
 	}
 }
