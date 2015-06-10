@@ -1,5 +1,6 @@
 @import url(webfont.css);
 @import url(keyframes.css);
+@import url(card-styling.css);
 
 html, body{
 	margin:0px;padding:0px;
@@ -220,46 +221,6 @@ body:before{
 	position:absolute;
 	top:32px;left:0px;
 	font-size:32px;
-}
-
-.card_wrapper.hearts{
-	color:red;
-}
-.card_wrapper.hearts .card .front .animation{
-	background-image:url(../img/compressed/pushup.gif);
-}
-.card_wrapper.hearts .card .writing:after{
-	content:'♥';
-}
-
-.card_wrapper.diamonds{
-	color:red;
-}
-.card_wrapper.diamonds .card .front .animation{
-	background-image:url(../img/compressed/crunch.gif);
-}
-.card_wrapper.diamonds .card .writing:after{
-	content:'♦';
-}
-
-.card_wrapper.clubs{
-	color:black;
-}
-.card_wrapper.clubs .card .front .animation{
-	background-image:url(../img/compressed/squat.gif);
-}
-.card_wrapper.clubs .card .writing:after{
-	content:'♣';
-}
-
-.card_wrapper.spades{
-	color:black;
-}
-.card_wrapper.spades .card .front .animation{
-	background-image:url(../img/compressed/pullup.gif);
-}
-.card_wrapper.spades .card .writing:after{
-	content:'♠';
 }
 
 #message{
