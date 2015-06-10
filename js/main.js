@@ -37,6 +37,8 @@ for(var i = 1; i < 5; i++) {
 shuffle(cards);
 
 var deck = document.querySelector("#deck");
+var footer = document.querySelector("footer");
+var message = document.querySelector("#message");
 
 //make a dummy card to give the appearance of a deck of cards.
 var dummy_card = document.createElement("div");
@@ -44,6 +46,35 @@ dummy_card.classList.add("card_wrapper", "dummy");
 dummy_card.innerHTML = '<div class="card"><div class="back"></div></div>';
 
 deck.appendChild(dummy_card);
+
+var messages = [
+	"LET'S GO!",
+	"KEEP GOING!",
+	"YOU GOT THIS!",
+	"WORK IT BABY!",
+	"FEEL THE BURN!",
+	"BUENO!",
+	"GOD IT HURTS",
+	"HALF WAY THERE!",
+	"WOW!",
+	"DOUBLE KILL!",
+	"HOME STRETCH!",
+	"NEARLY",
+	"YES...",
+	"TOUCH DOWN!!!"
+];
+messages.reverse();
+
+var epicMessage = function(stay){
+	message.style.display = "block";
+	message.querySelector("div").innerHTML = messages.pop();
+
+	if(!stay){
+		setTimeout(function(){
+			message.style.display = "none";
+		}, 2000);
+	}
+};
 
 var generateCard = function(suit, number){
 
@@ -95,6 +126,19 @@ var generateCard = function(suit, number){
 var drawCard = function(e){
 	e.preventDefault();
 
+	if(cards.length % 4 === 0){
+		epicMessage(true);
+	}
+
+	if(cards.length === 0){
+		var drawn = document.querySelector(".card_wrapper.drawn");
+		if(drawn !== null){
+			drawn.classList.remove("drawn");
+			drawn.classList.add("thrown");
+		}
+		return;
+	}
+
 	shuffle(cards);
 	var card = cards.pop();
 
@@ -103,6 +147,7 @@ var drawCard = function(e){
 	}
 
 	generateCard(card.suit, card.number);
+	footer.innerHTML = (52 - cards.length) + " / 52";
 
 	return false;
 };

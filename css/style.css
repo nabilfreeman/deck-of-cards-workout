@@ -239,7 +239,7 @@ body:before{
 	content:'♠';
 }
 
-.message{
+#message{
 	position:absolute;
 	top:0px;
 	left:0px;
@@ -250,23 +250,34 @@ body:before{
 	background-position:center center;
 	background-size:100% auto;
 	background-repeat:no-repeat;
+
+	display:none;
 }
 
-.message:before{
+#message:before{
 	content:'';
 	height:100%;
 	display:inline-block;
 	vertical-align:middle;
 }
 
-.message div{
+#message div{
 	display:inline-block;
 	vertical-align:middle;
 	font-weight:bold;
-	font-size:80px;
+	font-size:50px;
+	line-height:60px;
 	color:#FFF;
 	-webkit-text-stroke:2px #000;
 	text-shadow:15px 15px 40px #000, -15px -15px 40px #000, 15px -15px 40px #000, -15px 15px 40px #000;
+	width:300px;
+}
+
+#message:after{
+	content:'';
+	height:100%;
+	display:inline-block;
+	vertical-align:middle;
 }
 
 footer{
