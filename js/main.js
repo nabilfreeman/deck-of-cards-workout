@@ -199,6 +199,10 @@ var drawCard = function(e){
 	generateCard(card.suit, card.number);
 	footer.innerHTML = (52 - cards.length) + " / 52";
 
+	if(window.ga !== undefined){
+		ga('send', 'event', 'screen', 'tapped screen');
+	}
+
 	return false;
 };
 
