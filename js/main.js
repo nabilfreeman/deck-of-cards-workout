@@ -80,7 +80,14 @@ var generateCard = function(suit, number){
 		break;
 	}
 
-	card.innerHTML = '<div class="card"><div class="front"><div class="writing">' + writing + '</div><div class="writing flipped">' + writing + '</div></div><div class="back"></div></div>';
+	card.innerHTML = '<div class="card">'
+		+ '<div class="front">'
+			+ '<div class="writing">' + writing + '</div>'
+			+ '<div class="writing flipped">' + writing + '</div>'
+			+ '<div class="animation"></div>'
+		+ '</div>'
+		+ '<div class="back"></div>'
+	+ '</div>';
 
 	deck.appendChild(card);
 }
@@ -90,6 +97,11 @@ var drawCard = function(e){
 
 	shuffle(cards);
 	var card = cards.pop();
+
+	if(cards.length === 0){
+		dummy_card.parentNode.removeChild(dummy_card);
+	}
+
 	generateCard(card.suit, card.number);
 
 	return false;
