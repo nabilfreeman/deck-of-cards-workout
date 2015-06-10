@@ -1,3 +1,37 @@
+var stopwatch_el = document.querySelector("header");
+var stopwatch_interval;
+var start_time = 0;
+var timer = 0;
+
+function start_timer() {
+  stop_timer();
+
+  start_time = Date.now();
+  stopwatch_interval = setInterval(function() {
+    
+    timer = Date.now() - start_time;
+    
+    var time_object = new Date(timer);
+    
+    var minutes = "0" + time_object.getMinutes();
+    minutes = minutes.substr(minutes.length - 2);
+    
+    var seconds = "0" + time_object.getSeconds();
+    seconds = seconds.substr(seconds.length - 2);
+    
+    var milliseconds = "00" + time_object.getMilliseconds();
+    milliseconds = milliseconds.substr(milliseconds.length - 3);
+    milliseconds = milliseconds.slice(0, -1);
+    
+    stopwatch_el.innerHTML = minutes + ":" + seconds + ":" + milliseconds;
+    
+  }, 50);
+}
+
+function stop_timer() {
+  clearInterval(stopwatch_interval);
+}
+
 //shuffle function
 var shuffle = function(array){
 	var currentIndex = array.length, temporaryValue, randomIndex ;
@@ -142,12 +176,17 @@ var drawCard = function(e){
 			drawn.classList.remove("drawn");
 			drawn.classList.add("thrown");
 			epicMessage(true);
+			stop_timer();
 		}
 		return;
 	}
 
 	if(cards.length % 4 === 0){
 		epicMessage();
+	}
+
+	if(stopwatch_interval === undefined){
+		start_timer();
 	}
 
 	shuffle(cards);
