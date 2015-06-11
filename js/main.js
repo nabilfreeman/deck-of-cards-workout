@@ -23,7 +23,7 @@ function start_timer() {
     milliseconds = milliseconds.substr(milliseconds.length - 3);
     milliseconds = milliseconds.slice(0, -1);
     
-    stopwatch_el.innerHTML = minutes + ":" + seconds + ":" + milliseconds;
+    stopwatch_el.innerHTML = "Total time: " + minutes + ":" + seconds + ":" + milliseconds;
     
   }, 50);
 }
