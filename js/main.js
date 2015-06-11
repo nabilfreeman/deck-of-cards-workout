@@ -183,6 +183,12 @@ var drawCard = function(e){
 			stop_timer();
 			
 			footer.innerHTML = '<a href="http://github.com/nabilfreeman/deck-of-cards-workout" target="_blank">View source code</a>';
+
+			footer.querySelector("a").addEventListener("click", function(){
+				if(window.ga !== undefined){
+					ga('send', 'event', 'github link', 'clicked github link');
+				}
+			});
 		}
 		return;
 	}
