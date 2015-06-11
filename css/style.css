@@ -344,3 +344,7 @@ footer{
 	font-size:18px;
 	line-height:60px;
 }
+
+footer a{
+	color:#FFF;
+}

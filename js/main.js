@@ -173,10 +173,16 @@ var drawCard = function(e){
 	if(cards.length === 0){
 		var drawn = document.querySelector(".card_wrapper.drawn");
 		if(drawn !== null){
+			document.removeEventListener("touchstart", drawCard);
+			document.removeEventListener("click", drawCard);
+
 			drawn.classList.remove("drawn");
 			drawn.classList.add("thrown");
+			
 			epicMessage(true);
 			stop_timer();
+			
+			footer.innerHTML = '<a href="http://github.com/nabilfreeman/deck-of-cards-workout" target="_blank">View source code</a>';
 		}
 		return;
 	}
