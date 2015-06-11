@@ -32,7 +32,7 @@
 	color:black;
 }
 .card_wrapper.spades .card .front .animation{
-	background-image:url(../img/compressed/pullup.gif);
+	background-image:url(../img/compressed/starjump.gif);
 }
 .card_wrapper.spades .card .writing:after{
 	content:'♠';
