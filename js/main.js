@@ -100,7 +100,7 @@ var messages = [
 	"HOME STRETCH!",
 	"NEARLY",
 	"YES...",
-	"FINISHED!!!"
+	"IT'S OVER!!!"
 ];
 messages.reverse();
 
