@@ -16,7 +16,7 @@ body{
 	transition:0.2s;
 
 	background:hsl(210, 50%, 50%);
-	background-color:hsl(230, 100%, 10%);
+	background-color:rgb(13,116,61);
 
 	text-align:center;
 	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -63,6 +63,16 @@ body:before{
 	vertical-align:middle;
 }
 
+canvas{
+	display:none;
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background:transparent;
+}
+
 #deck{
 	display:none;
 	position:relative;
@@ -87,10 +97,8 @@ body:before{
 	width:100%;
 	height:100%;
 	border-radius:10px;
-	box-shadow:0px 3px 10px rgba(0,0,0,0.6);
+	box-shadow:0px 3px 10px rgba(0,0,0,0.3);
 	font-weight:bold;
-
-	/*text-shadow:1px 1px 0px #FFF, -1px -1px 0px #FFF, 1px -1px 0px #FFF, -1px 1px 0px #FFF;*/
 
 	-webkit-transition:1s;
 	-moz-transition:1s;
@@ -230,35 +238,52 @@ body:before{
 }
 
 #message{
-	position:absolute;
-	top:0px;
+	position:fixed;
+	top:50%;
 	left:50%;
-	width:280px;
-	margin-left:-140px;
-	height:100%;
+	width:200%;
+	height:200%;
 
-	background-image:url(../img/explosion.gif);
-	background-position:center center;
-	background-size:100% auto;
-	background-repeat:no-repeat;
+	background:rgba(0,0,0,0.4);
+	font-style:italic;
 
 	display:none;
 
-	-webkit-transform:translateZ(150px);
-	-moz-transform:translateZ(150px);
-	-ms-transform:translateZ(150px);
-	-o-transform:translateZ(150px);
-	transform:translateZ(150px);
+	-webkit-transform:translateZ(150px) translateX(-50%) translateY(-50%) rotate(15deg);
+	-moz-transform:translateZ(150px) translateX(-50%) translateY(-50%) rotate(15deg);
+	-ms-transform:translateZ(150px) translateX(-50%) translateY(-50%) rotate(15deg);
+	-o-transform:translateZ(150px) translateX(-50%) translateY(-50%) rotate(15deg);
+	transform:translateZ(150px) translateX(-50%) translateY(-50%) rotate(15deg);
+
+	-webkit-animation: messageFlyin 1s linear 1;
+	-moz-animation: messageFlyin 1s linear 1;
+	-ms-animation: messageFlyin 1s linear 1;
+	-o-animation: messageFlyin 1s linear 1;
+	animation: messageFlyin 1s linear 1;
 }
 
-#message:before{
+#message.transparent{
+	background:transparent;
+}
+
+#message .wrapper{
+	height:100%;
+
+	-webkit-transform:rotate(-15deg);
+	-moz-transform:rotate(-15deg);
+	-ms-transform:rotate(-15deg);
+	-o-transform:rotate(-15deg);
+	transform:rotate(-15deg);
+}
+
+#message .wrapper:before{
 	content:'';
 	height:100%;
 	display:inline-block;
 	vertical-align:middle;
 }
 
-#message div{
+#message .wrapper div{
 	display:inline-block;
 	vertical-align:middle;
 	font-weight:bold;
@@ -266,11 +291,23 @@ body:before{
 	line-height:60px;
 	color:#FFF;
 	-webkit-text-stroke:2px #000;
-	text-shadow:15px 15px 40px #000, -15px -15px 40px #000, 15px -15px 40px #000, -15px 15px 40px #000;
 	width:260px;
 }
 
-#message:after{
+#message .wrapper div button{
+	-webkit-text-stroke: 0px #000;
+	background: #FFF;
+	border: none;
+	color: #000;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	padding: 15px;
+	border-radius: 3px;
+	margin-top: 30px;
+	font-weight: bold;
+}
+
+#message .wrapper:after{
 	content:'';
 	height:100%;
 	display:inline-block;
@@ -288,7 +325,6 @@ body:before{
 	text-align:left;
 
 	color:#FFF;
-	text-shadow:1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000;
 }
 
 #intro:before{
@@ -319,13 +355,12 @@ body:before{
 
 header{
 	position:fixed;
-	top:0px;
+	top:10px;
 	left:0px;
 	width:100%;
 	height:60px;
 
 	color:#FFF;
-	text-shadow:1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000;
 	font-weight:bold;
 	font-size:18px;
 	line-height:60px;
@@ -339,7 +374,6 @@ footer{
 	height:60px;
 
 	color:#FFF;
-	text-shadow:1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000;
 	font-weight:bold;
 	font-size:18px;
 	line-height:60px;

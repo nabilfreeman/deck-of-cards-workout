@@ -67,6 +67,11 @@ for(var i = 1; i < 5; i++) {
 	}
 }
 
+// cards = [{
+// 	suit: 1,
+// 	number: 5
+// }];
+
 //shuffle the deck!
 shuffle(cards);
 
@@ -95,18 +100,29 @@ var messages = [
 	"HOME STRETCH!",
 	"NEARLY",
 	"YES...",
-	"TOUCH DOWN!!!"
+	"FINISHED!!!"
 ];
 messages.reverse();
 
+var message_timeout;
+
 var epicMessage = function(stay){
+	clearTimeout(message_timeout);
+
 	message.style.display = "block";
-	message.querySelector("div").innerHTML = messages.pop();
+	message.querySelector(".wrapper div").innerHTML = messages.pop();
 
 	if(!stay){
-		setTimeout(function(){
+		message_timeout = setTimeout(function(){
 			message.style.display = "none";
 		}, 2000);
+	} else {
+		message.classList.add("transparent");
+
+		var button = document.createElement("button");
+		button.innerHTML = "Play again";
+
+		message.querySelector(".wrapper div").appendChild(button);
 	}
 };
 
@@ -181,14 +197,8 @@ var drawCard = function(e){
 			
 			epicMessage(true);
 			stop_timer();
-			
-			footer.innerHTML = '<a href="http://github.com/nabilfreeman/deck-of-cards-workout" target="_blank">View source code</a>';
 
-			footer.querySelector("a").addEventListener("click", function(){
-				if(window.ga !== undefined){
-					ga('send', 'event', 'github link', 'clicked github link');
-				}
-			});
+			initFireworks();
 		}
 		return;
 	}
