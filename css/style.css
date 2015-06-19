@@ -15,8 +15,8 @@ body{
 	-o-transition:0.2s;
 	transition:0.2s;
 
-	background:hsl(210, 50%, 50%);
-	background-color:rgb(13,116,61);
+	background:hsl(220, 50%, 50%);
+	/*background-color:rgb(13,116,61);*/
 
 	text-align:center;
 	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
