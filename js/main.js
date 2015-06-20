@@ -162,7 +162,8 @@ var generateCard = function(suit, number){
 
 var createDeck = function(workout){
 	
-	intro.classList.add("thrown");
+	// intro.classList.add("thrown");
+	document.body.removeChild(intro);
 
 	document.body.classList.remove("intro");
 	footer.innerHTML = "DRAW A CARD!";

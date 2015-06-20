@@ -50,15 +50,15 @@ body{
 }
 
 body.intro #intro{
-	display:block;
+	opacity:1;
 }
 
-body.intro #deck{
-	display:none;
+body.intro #deck .dummy .card{
+	opacity:0;
 }
 
 body.intro header{
-	display:none;
+	opacity:0;
 }
 
 /*vertical align hack*/
@@ -91,6 +91,10 @@ body button emoji{
 }
 
 body button:after{
+	-webkit-transition:opacity 0.2s, width 0.2s 0.2s, height 0.2s 0.2s;
+	-moz-transition:opacity 0.2s, width 0.2s 0.2s, height 0.2s 0.2s;
+	-ms-transition:opacity 0.2s, width 0.2s 0.2s, height 0.2s 0.2s;
+	-o-transition:opacity 0.2s, width 0.2s 0.2s, height 0.2s 0.2s;
 	transition:opacity 0.2s, width 0.2s 0.2s, height 0.2s 0.2s;
 
 	content:'';
@@ -115,6 +119,10 @@ body button:after{
 }
 
 body button:active:after{
+	-webkit-transition:width 0.2s, height 0.2s, opacity 0s;
+	-moz-transition:width 0.2s, height 0.2s, opacity 0s;
+	-ms-transition:width 0.2s, height 0.2s, opacity 0s;
+	-o-transition:width 0.2s, height 0.2s, opacity 0s;
 	transition:width 0.2s, height 0.2s, opacity 0s;
 
 	opacity:1;
@@ -142,7 +150,12 @@ canvas{
 }
 
 #deck{
-	display:none;
+	-webkit-transition:0.2s;
+	-moz-transition:0.2s;
+	-ms-transition:0.2s;
+	-o-transition:0.2s;
+	transition:0.2s;
+
 	position:relative;
 	width:220px;
 	height:320px;
@@ -318,11 +331,11 @@ canvas{
 
 	display:none;
 
-	-webkit-transform:translateZ(150px);
-	-moz-transform:translateZ(150px);
-	-ms-transform:translateZ(150px);
-	-o-transform:translateZ(150px);
-	transform:translateZ(150px);
+	-webkit-transform:translateZ(150px) translateX(-100%);
+	-moz-transform:translateZ(150px) translateX(-100%);
+	-ms-transform:translateZ(150px) translateX(-100%);
+	-o-transform:translateZ(150px) translateX(-100%);
+	transform:translateZ(150px) translateX(-100%);
 
 	-webkit-animation: messageFlyin 1.5s linear 1;
 	-moz-animation: messageFlyin 1.5s linear 1;
@@ -335,6 +348,8 @@ canvas{
 	-ms-animation-fill-mode:forwards;
 	-o-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
+
+	display:none;
 }
 
 #message.no_animation{
@@ -442,6 +457,12 @@ canvas{
 }
 
 header{
+	-webkit-transition:0.2s;
+	-moz-transition:0.2s;
+	-ms-transition:0.2s;
+	-o-transition:0.2s;
+	transition:0.2s;
+
 	position:fixed;
 	top:10px;
 	left:0px;
