@@ -1,3 +1,5 @@
+NodeList.prototype.forEach = Array.prototype.forEach;
+
 var stopwatch_el = document.querySelector("header");
 var stopwatch_interval;
 var start_time = 0;
@@ -52,29 +54,9 @@ var shuffle = function(array){
 	return array;
 }
 
-//generate our deck of cards.
-var cards = [];
-for(var i = 1; i < 5; i++) {
-	for(var j = 1; j < 14; j++) {
-		
-		//if the current index is a picture card i.e. more than 10, set reps to a 5.
-		var reps = j > 10 ? 5 : j;
+//END UTILITY STUFF
 
-		cards.push({
-			suit: i,
-			number: reps
-		});
-	}
-}
-
-// cards = [{
-// 	suit: 1,
-// 	number: 5
-// }];
-
-//shuffle the deck!
-shuffle(cards);
-
+var intro = document.querySelector("#intro");
 var deck = document.querySelector("#deck");
 var footer = document.querySelector("footer");
 var message = document.querySelector("#message");
@@ -100,9 +82,8 @@ var messages = [
 	"HOME STRETCH!",
 	"NEARLY",
 	"YES...",
-	"IT'S OVER!!!"
+	"YOU DID IT!!!"
 ];
-messages.reverse();
 
 var message_timeout;
 
@@ -117,10 +98,16 @@ var epicMessage = function(stay){
 			message.style.display = "none";
 		}, 2000);
 	} else {
-		message.classList.add("transparent");
+		message.classList.add("no_animation");
+
+		message.querySelector(".wrapper div").appendChild(document.createElement("br"));
 
 		var button = document.createElement("button");
 		button.innerHTML = "Play again";
+
+		button.addEventListener("click", function(){
+			window.location.reload();
+		});
 
 		message.querySelector(".wrapper div").appendChild(button);
 	}
@@ -173,60 +160,116 @@ var generateCard = function(suit, number){
 	deck.appendChild(card);
 }
 
-var drawCard = function(e){
-	e.preventDefault();
+var createDeck = function(workout){
+	
+	intro.classList.add("thrown");
 
-	var intro = document.querySelector("#intro");
+	document.body.classList.remove("intro");
+	footer.innerHTML = "DRAW A CARD!";
 
-	if(intro !== null){
-		document.body.classList.remove("intro");
-		document.body.removeChild(intro);
-		footer.innerHTML = "DRAW A CARD!";
+	var cards = [];
 
-		return;
+	//generate our deck of cards. 13 if fast, 52 if epic.
+	switch(workout){
+		case "fast":
+			messages.splice(4, messages.length - 5);
+
+			for(var i = 1; i < 5; i++) {
+				for(var j = 1; j < 14; j+=4) {
+					
+					//if the current index is a picture card i.e. more than 10, set reps to a 5.
+					// var reps = j > 10 ? 5 : j;
+					var reps = j;
+
+					cards.push({
+						suit: i,
+						number: reps
+					});
+				}
+			}
+		break;
+		case "epic":
+			for(var i = 1; i < 5; i++) {
+				for(var j = 1; j < 14; j++) {
+					
+					//if the current index is a picture card i.e. more than 10, set reps to a 5.
+					// var reps = j > 10 ? 5 : j;
+					var reps = j;
+
+					cards.push({
+						suit: i,
+						number: reps
+					});
+				}
+			}
+		break;
 	}
 
-	if(cards.length === 0){
-		var drawn = document.querySelector(".card_wrapper.drawn");
-		if(drawn !== null){
-			document.removeEventListener("touchstart", drawCard);
-			document.removeEventListener("click", drawCard);
+	//reverse epic messages so we can pop them off the array.
+	messages.reverse();
 
-			drawn.classList.remove("drawn");
-			drawn.classList.add("thrown");
-			
-			epicMessage(true);
-			stop_timer();
+	var workout_length = cards.length;
 
-			initFireworks();
+	// cards = [{
+	// 	suit: 1,
+	// 	number: 5
+	// }];
+
+	var drawCard = function(e){
+		e.preventDefault();
+
+		if(cards.length === 0){
+			var drawn = document.querySelector(".card_wrapper.drawn");
+			if(drawn !== null){
+				document.removeEventListener("touchstart", drawCard);
+				document.removeEventListener("click", drawCard);
+
+				drawn.classList.remove("drawn");
+				drawn.classList.add("thrown");
+				
+				epicMessage(true);
+				stop_timer();
+
+				initFireworks();
+			}
+			return;
 		}
-		return;
-	}
 
-	if(cards.length % 4 === 0){
-		epicMessage();
-	}
+		if(cards.length % 4 === 0){
+			epicMessage();
+		}
 
-	if(stopwatch_interval === undefined){
-		start_timer();
-	}
+		if(stopwatch_interval === undefined){
+			start_timer();
+		}
 
-	shuffle(cards);
-	var card = cards.pop();
+		shuffle(cards);
+		var card = cards.pop();
 
-	if(cards.length === 0){
-		dummy_card.parentNode.removeChild(dummy_card);
-	}
+		if(cards.length === 0){
+			dummy_card.parentNode.removeChild(dummy_card);
+		}
 
-	generateCard(card.suit, card.number);
-	footer.innerHTML = (52 - cards.length) + " / 52";
+		generateCard(card.suit, card.number);
+		footer.innerHTML = (workout_length - cards.length) + " / " + workout_length;
 
-	if(window.ga !== undefined){
-		ga('send', 'event', 'screen', 'tapped screen');
-	}
+		if(window.ga !== undefined){
+			ga('send', 'event', 'screen', 'tapped screen');
+		}
 
-	return false;
+		return false;
+	};
+
+	document.addEventListener("touchstart", drawCard);
+	document.addEventListener("click", drawCard);
+
 };
 
-document.addEventListener("touchstart", drawCard);
-document.addEventListener("click", drawCard);
+intro.querySelectorAll("button").forEach(function(choice){
+
+	choice.addEventListener("click", function(e){
+		e.stopPropagation();
+		createDeck(choice.getAttribute("data-workout"));
+	});
+
+});

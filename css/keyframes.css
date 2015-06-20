@@ -40,24 +40,48 @@
 
 @-webkit-keyframes messageFlyin{
 	0%{
-		left:-100%;	
+		-webkit-transform:translateZ(150px) translateX(-100%);
 	}
 	25%{
-		left:50%;
+		-webkit-transform:translateZ(150px) translateX(0%);
+	}
+	85%{
+		-webkit-transform:translateZ(150px) translateX(0%) scale(1.2);
 	}
 	100%{
-		left:50%;
+		-webkit-transform:translateZ(150px) translateX(100%) scale(1.2);
 	}
 }
 
 @keyframes messageFlyin{
 	0%{
-		left:-100%;	
+		transform:translateZ(150px) translateX(-100%);
 	}
 	25%{
-		left:50%;
+		transform:translateZ(150px) translateX(0%);
+	}
+	85%{
+		transform:translateZ(150px) translateX(0%) scale(1.2);
 	}
 	100%{
-		left:50%;
+		transform:translateZ(150px) translateX(100%) scale(1.2);
+	}
+}
+
+@-webkit-keyframes shakeText{
+	0%{
+		-webkit-transform:rotate(-1deg);
+	}
+	100%{
+		-webkit-transform:rotate(1deg);
+	}
+}
+
+@keyframes shakeText{
+	0%{
+		transform:rotate(-1deg);
+	}
+	100%{
+		transform:rotate(1deg);
 	}
 }

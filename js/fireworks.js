@@ -167,8 +167,6 @@ var initFireworks = function(){
 	    angleX = Math.sin(angle);
 	    angleZ = Math.sin(angle);
 
-	    console.log(width, height);
-
 	    var imgData = ctx.createImageData(width, height);
 
 	    for (var e = 0; e < 30; e++) {
@@ -199,12 +197,8 @@ var initFireworks = function(){
 
 	// smart trick from @TimoHausmann for full screen pens
 	setTimeout(function () {
-		console.log(canvas);
-
 	    width = canvas.width = window.innerWidth;
 	    height = canvas.height = window.innerHeight;;
-
-	    console.log(width, height);
 
 	    vanishPointY = height / 2;
 	    vanishPointX = width / 2;
