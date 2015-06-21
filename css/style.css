@@ -196,6 +196,9 @@ canvas{
 
 .card_wrapper.drawn .card{
 	-webkit-animation:drawCard 1s 1;
+	-moz-animation:drawCard 1s 1;
+	-ms-animation:drawCard 1s 1;
+	-o-animation:drawCard 1s 1;
 	animation:drawCard 1s 1;
 	/*-webkit-animation-fill-mode:forwards;*/
 	/*animation-fill-mode:forwards;*/
@@ -203,8 +206,15 @@ canvas{
 
 .card_wrapper.thrown .card{
 	-webkit-animation:throwCard 0.2s 1;
+	-moz-animation:throwCard 0.2s 1;
+	-ms-animation:throwCard 0.2s 1;
+	-o-animation:throwCard 0.2s 1;
 	animation:throwCard 0.2s 1;
+
 	-webkit-animation-fill-mode:forwards;
+	-moz-animation-fill-mode:forwards;
+	-ms-animation-fill-mode:forwards;
+	-o-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
 }
 
@@ -232,6 +242,9 @@ canvas{
 	background:#F5F5F5;
 
 	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
 	backface-visibility:hidden;
 
 	-webkit-transform:rotateY(0deg);
@@ -276,6 +289,9 @@ canvas{
 	background-size:100% auto;
 
 	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
 	backface-visibility:hidden;
 
 	-webkit-transform:rotateY(180deg);
@@ -414,8 +430,15 @@ canvas{
 
 #intro.thrown{
 	-webkit-animation:throwCard 0.2s 1;
+	-moz-animation:throwCard 0.2s 1;
+	-ms-animation:throwCard 0.2s 1;
+	-o-animation:throwCard 0.2s 1;
 	animation:throwCard 0.2s 1;
+
 	-webkit-animation-fill-mode:forwards;
+	-moz-animation-fill-mode:forwards;
+	-ms-animation-fill-mode:forwards;
+	-o-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
 }
 
