@@ -96,7 +96,7 @@ var epicMessage = function(stay){
 	if(!stay){
 		message_timeout = setTimeout(function(){
 			message.style.display = "none";
-		}, 2000);
+		}, 1000);
 	} else {
 		message.classList.add("no_animation");
 
